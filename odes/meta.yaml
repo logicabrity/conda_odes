@@ -15,6 +15,7 @@ requirements:
     - numpy
     - scipy
     - enum34
+    - pkgconfig
 
   run:
     - sundials
