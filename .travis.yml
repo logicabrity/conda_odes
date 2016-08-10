@@ -1,0 +1,30 @@
+sudo: false
+language: python
+python:
+  - "2.7"
+  - "3.4"
+  - "3.5"
+
+addons:
+  apt:
+    packages:
+      - gfortran
+
+before_install:
+  - deactivate  # deactivate virtualenv
+  - if [[ "$TRAVIS_PYTHON_VERSION" != "2.7" ]]; then
+      export MINICONDA="Miniconda3-latest-Linux-x86_64.sh";
+    fi
+  - export PATH=$HOME/miniconda/bin:$PATH
+  - make install-conda
+
+install:
+  - make build-odes
+  - make install-odes
+
+script:
+  - python -c 'import scikits.odes as od; od.test()'
+
+notifications:
+  email:
+    on_failure: always
