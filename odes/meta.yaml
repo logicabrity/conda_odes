@@ -3,7 +3,7 @@ package:
   version: "2.2.1"
 
 source:
-  git_rev: 8eea68ff25ab1eae1cc4a8b72337b4f1b7899709
+  git_rev: f3e01e9447e412b22ca2353a632ea554fe437575
   git_url: https://github.com/logicabrity/odes.git
 
 requirements:
