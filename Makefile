@@ -15,4 +15,7 @@ install-conda:
 install-odes:
 	conda install --yes --use-local odes
 
-.PHONY: build-odes install-conda install-odes
+install-python-2-compability:
+	pip install enum34
+
+.PHONY: build-odes install-conda install-odes install-python-2-compability

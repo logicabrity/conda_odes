@@ -14,7 +14,6 @@ requirements:
     - nomkl
     - numpy
     - scipy
-    - enum34
     - pkgconfig
 
   run:
@@ -24,11 +23,6 @@ requirements:
     - nomkl
     - numpy
     - scipy
-    - enum34
-    - nose
-
-test:
-  requires:
     - nose
 
 about:

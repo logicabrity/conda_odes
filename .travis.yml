@@ -17,6 +17,9 @@ before_install:
     fi
   - export PATH=$HOME/miniconda/bin:$PATH
   - make install-conda
+  - if [[ "$TRAVIS_PYTHON_VERSION" == "2.7" ]]; then
+      make install-python-2-compability
+    fi
 
 install:
   - make build-odes
