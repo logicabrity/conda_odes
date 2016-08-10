@@ -3,6 +3,7 @@ MINICONDA ?= "Miniconda-latest-Linux-x86_64.sh"
 build-odes:
 	conda config --add channels logicabrity 
 	conda config --add channels cyclus
+	conda config --add channels anaconda
 	conda build odes
 
 install-conda:
