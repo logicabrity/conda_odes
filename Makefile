@@ -9,8 +9,8 @@ build-odes:
 install-conda:
 	wget https://repo.continuum.io/miniconda/$(MINICONDA) -O miniconda.sh;
 	bash ./miniconda.sh -b -p $$HOME/miniconda
-	conda install --yes conda-build
-	conda upgrade --yes conda conda-build
+	conda install --quiet --yes conda-build
+	conda upgrade --quiet --yes conda conda-build
 
 install-odes:
 	conda install --yes --use-local odes
