@@ -25,6 +25,7 @@ requirements:
     - numpy
     - scipy
     - enum34
+    - nose
 
 test:
   requires:
