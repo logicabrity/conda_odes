@@ -15,7 +15,9 @@ install-conda:
 install-odes:
 	conda install --yes --use-local odes
 
-install-python-2-compability:
-	pip install enum34
+workaround-enum34:
+	# We don't need to install the package enum34 for python >= 3.4.
+	# However, we can't express that in the conda recipe itself.
+	sed -i 's/\- enum34/\# enum34 \# deactivated for python \>\= 3\.4/g' odes/meta.yaml
 
-.PHONY: build-odes install-conda install-odes install-python-2-compability
+.PHONY: build-odes install-conda install-odes workaround-enum34
