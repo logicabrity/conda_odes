@@ -28,7 +28,7 @@ build-odes:
 create-environment:
 	conda create --quiet --yes --name p$(PYTHON) python=$(PYTHON)
 	@echo You need to activate this environment via \`source activate p$(PYTHON)\`.
-	@echo This can't be done via this Makefile.
+	@echo This can\'t be done via this Makefile.
 
 handle-python-version:
 # We don't need to install the package enum34 for python >= 3.4.
