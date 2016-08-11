@@ -24,7 +24,7 @@ build-odes:
 	conda config --add channels logicabrity 
 	conda config --add channels cyclus
 	conda config --add channels anaconda
-	CONDA_PY=$${PYTHON//.} conda build odes
+	CONDA_PY=$${PYTHON//.} conda build --quiet --python $(PYTHON) odes
 
 handle-python-version:
 # We don't need to install the package enum34 for python >= 3.4.
