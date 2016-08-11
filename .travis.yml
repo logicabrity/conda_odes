@@ -12,14 +12,9 @@ addons:
 
 before_install:
   - deactivate  # deactivate virtualenv
-  - if [[ "$TRAVIS_PYTHON_VERSION" > "3.0" ]]; then
-      export MINICONDA="Miniconda3-latest-Linux-x86_64.sh";
-    fi
   - export PATH=$HOME/miniconda/bin:$PATH
   - make install-conda
-  - if [[ ("$TRAVIS_PYTHON_VERSION" == "3.4") || ("$TRAVIS_PYTHON_VERSION" > "3.4")]]; then
-      make workaround-enum34;
-    fi
+  - make handle-python-version
 
 install:
   - make build-odes
