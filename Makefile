@@ -45,7 +45,8 @@ install-conda:
 	conda upgrade --quiet --yes conda conda-build
 
 install-odes:
-	conda info odes
+	conda create --quiet --yes --name p$(PYTHON) python=$(PYTHON)
+	source activate p$(PYTHON)
 	conda install --yes --use-local odes
 
 .PHONY: build-odes handle-python-version install-conda install-odes
