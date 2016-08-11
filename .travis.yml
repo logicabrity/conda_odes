@@ -18,6 +18,8 @@ before_install:
 
 install:
   - make build-odes
+  - make create-environment
+  - source activate p$TRAVIS_PYTHON_VERSION
   - make install-odes
 
 script:

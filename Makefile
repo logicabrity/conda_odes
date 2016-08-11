@@ -23,8 +23,12 @@ endif
 build-odes:
 	conda config --add channels logicabrity 
 	conda config --add channels cyclus
-	conda config --add channels anaconda
 	CONDA_PY=$${PYTHON//.} conda build --quiet --python $(PYTHON) odes
+
+create-environment:
+	conda create --quiet --yes --name p$(PYTHON) python=$(PYTHON)
+	@echo You need to activate this environment via `source activate p$(PYTHON)`.
+	@echo This can't be done via this Makefile.
 
 handle-python-version:
 # We don't need to install the package enum34 for python >= 3.4.
@@ -45,8 +49,6 @@ install-conda:
 	conda upgrade --quiet --yes conda conda-build
 
 install-odes:
-	conda create --quiet --yes --name p$(PYTHON) python=$(PYTHON)
-	source activate p$(PYTHON)
 	conda install --yes --use-local odes
 
-.PHONY: build-odes handle-python-version install-conda install-odes
+.PHONY: build-odes create-environment handle-python-version install-conda install-odes
