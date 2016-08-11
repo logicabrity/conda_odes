@@ -45,6 +45,7 @@ install-conda:
 	conda upgrade --quiet --yes conda conda-build
 
 install-odes:
+	conda info odes
 	conda install --yes --use-local odes
 
 .PHONY: build-odes handle-python-version install-conda install-odes
