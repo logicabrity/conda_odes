@@ -27,7 +27,7 @@ build-odes:
 
 create-environment:
 	conda create --quiet --yes --name p$(PYTHON) python=$(PYTHON)
-	@echo You need to activate this environment via `source activate p$(PYTHON)`.
+	@echo You need to activate this environment via \`source activate p$(PYTHON)\`.
 	@echo This can't be done via this Makefile.
 
 handle-python-version:
